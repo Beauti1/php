@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Practical 1</title>
+</head>
+<body>
+	<form onsubmit="return val()"  method="post"  action="prac1.php">
+		<table>
+			<th> Multiplication Table</th>
+			<tr>
+				<td>
+					<label>Enter a number:</label>
+				</td>
+				<td>
+					<input type="text" name="num" id="num">
+				</td>
+			</tr>
+			<tr>
+				<tr>
+					<td><input type="submit" name="submit" value="Submit"></td>
+					<td><input type="reset" name="clear" value="Clear"></td>
+				</tr>
+			</tr>
+
+		</table>
+	</form>
+	<p id="errormsg1" class="error"></p>
+
+	<script type="text/javascript">
+		function val() 
+		{
+			var num = document.getElementById('num').value;
+			var ret = true;
+
+			if(num.length==0){
+				document.getElementById("errormsg1").innerHTML="Please enter a number.";
+				ret= false;
+			}
+			if(isNaN(num)){
+                document.getElementById('errormsg1').innerHTML ="  Please enter a number not any other character.";
+                ret= false;
+            }
+
+			return ret;
+		}
+	</script>
+</body>
+</html>
